@@ -44,18 +44,3 @@ jobs:
                     done         
                     npm test
 
-
-workflows:
-    commit:
-        jobs:
-            - build
-    daily:
-        triggers:
-            - schedule:
-                cron: "15 01 * * *"
-                filters:
-                    branches:
-                        only:
-                            - master
-        jobs:
-            - build
